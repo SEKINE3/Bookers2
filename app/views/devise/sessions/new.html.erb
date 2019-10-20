@@ -1,0 +1,26 @@
+ <h2>Log in</h2>
+
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+    <div class="field">
+      <label for="user_name">Name</label><br />
+      <%= f.text_field :name, autofocus: true, id:"inputName" %>
+    </div>
+    <div class="field">
+      <label for="user_password">Password</label><br />
+      <%= f.password_field :password, id:"inputPassword" %>
+    </div>
+
+    <div class="field">
+        <input name="user[remember_me]" type="hidden" value="0" /><input type="checkbox" value="1" name="user[remember_me]" id="user_remember_me" />
+        <label for="user_remember_me">Remember me</label>
+    </div>
+
+    <div class="actions">
+     <%= f.submit "Log in", class:"btn btn-primary" %>
+    <% end %>
+    </div>
+
+  <a class="sign_up" href="/users/sign_up">Sign up</a><br />
+
+  <a href="/users/password/new">Forgot your password?</a><br />
